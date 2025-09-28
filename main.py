@@ -1,19 +1,21 @@
 #!/usr/bin/env python3
 """
-CyberGuard AI Agent - Advanced Cybersecurity Monitoring System
+HealthGuard AI Agent - Healthcare Cybersecurity Monitoring System
 Author: [Your Name]
 Date: 2024
 
-An intelligent AI-powered cybersecurity monitoring system that uses machine learning
-and behavioral analysis to detect, analyze, and respond to security threats in real-time.
+An intelligent AI-powered cybersecurity monitoring system specifically designed for 
+healthcare environments including hospitals, telehealth platforms, EHR systems, 
+and medical IoT devices. Ensures HIPAA compliance while protecting patient data.
 
 Key Features:
-- Real-time network traffic analysis
-- AI-powered threat detection using anomaly detection
-- Behavioral pattern analysis
-- Automated incident response
-- Risk scoring and assessment
-- Integration with threat intelligence feeds
+- Healthcare-specific threat detection and analysis
+- HIPAA compliance monitoring and breach detection
+- Medical device security and IoT monitoring
+- Telehealth platform protection
+- EHR system access pattern analysis
+- Automated incident response for healthcare environments
+- PHI (Protected Health Information) data loss prevention
 """
 
 import asyncio
@@ -71,12 +73,12 @@ logging.basicConfig(
         logging.StreamHandler(sys.stdout)
     ]
 )
-logger = logging.getLogger(__name__)
+logger = logging.getLogger("HealthGuard-AI")
 
 
 @dataclass
-class ThreatEvent:
-    """Represents a security threat event."""
+class HealthcareThreatEvent:
+    """Represents a healthcare-specific security threat event."""
     id: str
     timestamp: datetime
     threat_type: str
@@ -88,6 +90,9 @@ class ThreatEvent:
     confidence_score: float
     status: str  # Active, Mitigated, Investigating
     mitigation_actions: List[str]
+    hipaa_relevant: bool  # Whether this threat affects HIPAA compliance
+    affected_systems: List[str]  # EHR, Telehealth, Medical_Device, etc.
+    phi_at_risk: bool  # Whether PHI (Protected Health Information) is at risk
 
 
 @dataclass
@@ -103,48 +108,83 @@ class NetworkPacket:
     flags: str
 
 
-class ThreatIntelligence:
-    """Threat intelligence integration and management."""
+class HealthcareThreatIntelligence:
+    """Healthcare-specific threat intelligence and HIPAA compliance monitoring."""
     
     def __init__(self):
-        self.malicious_ips = set()
-        self.malicious_domains = set()
-        self.known_attack_signatures = {}
-        self.load_threat_feeds()
+        self.healthcare_malicious_ips = set()
+        self.medical_device_ips = set()
+        self.ehr_systems = set()
+        self.telehealth_platforms = set()
+        self.hipaa_violations = []
+        self.load_healthcare_threat_feeds()
     
-    def load_threat_feeds(self):
-        """Load threat intelligence feeds."""
-        # Simulated threat intelligence data
-        self.malicious_ips.update([
-            "192.168.1.100", "10.0.0.50", "203.45.67.89",
-            "185.220.101.50", "91.235.116.45"
+    def load_healthcare_threat_feeds(self):
+        """Load healthcare-specific threat intelligence feeds."""
+        # Healthcare-targeted malicious IPs (simulated)
+        self.healthcare_malicious_ips.update([
+            "192.168.100.45", "10.50.30.25", "172.16.50.100",
+            "203.0.113.45", "198.51.100.67", "185.199.108.153"
         ])
         
-        self.malicious_domains.update([
-            "malicious-site.com", "phishing-bank.net", 
-            "fake-security.org", "scam-download.io"
+        # Medical device IP ranges (simulated hospital network)
+        self.medical_device_ips.update([
+            f"10.100.1.{i}" for i in range(50, 100)  # Medical devices subnet
         ])
         
-        self.known_attack_signatures.update({
-            "sql_injection": r"(\bunion\b.*\bselect\b|\bor\b.*\b1=1\b)",
-            "xss_attack": r"(<script|javascript:|onerror=|onload=)",
-            "command_injection": r"(;|\||\&\&|\|\|).*?(cat|ls|pwd|whoami|id)",
-            "directory_traversal": r"(\.\.\/|\.\.\\)",
-            "brute_force_pattern": r"(admin|root|administrator).*?(password|123456|admin)"
-        })
+        # EHR system IPs
+        self.ehr_systems.update([
+            "10.0.20.10", "10.0.20.11", "10.0.20.12"  # EHR servers
+        ])
         
-        logger.info(f"Loaded {len(self.malicious_ips)} malicious IPs and {len(self.malicious_domains)} domains")
+        # Telehealth platform IPs
+        self.telehealth_platforms.update([
+            "10.0.30.10", "10.0.30.11", "10.0.30.12"  # Telehealth servers
+        ])
+        
+        logger.info(f"Loaded healthcare threat intelligence: "
+                   f"{len(self.healthcare_malicious_ips)} malicious IPs, "
+                   f"{len(self.medical_device_ips)} medical devices")
     
-    def is_malicious_ip(self, ip: str) -> bool:
-        """Check if IP is in threat intelligence feeds."""
-        return ip in self.malicious_ips
+    def is_healthcare_malicious_ip(self, ip: str) -> bool:
+        """Check if IP is known healthcare threat."""
+        return ip in self.healthcare_malicious_ips
     
-    def check_attack_signature(self, data: str) -> Tuple[bool, str]:
-        """Check data against known attack signatures."""
-        for attack_type, pattern in self.known_attack_signatures.items():
-            if re.search(pattern, data, re.IGNORECASE):
-                return True, attack_type
-        return False, ""
+    def is_medical_device(self, ip: str) -> bool:
+        """Check if IP belongs to medical device."""
+        return ip in self.medical_device_ips
+    
+    def is_ehr_system(self, ip: str) -> bool:
+        """Check if IP is an EHR system."""
+        return ip in self.ehr_systems
+    
+    def is_telehealth_platform(self, ip: str) -> bool:
+        """Check if IP is a telehealth platform."""
+        return ip in self.telehealth_platforms
+    
+    def check_hipaa_compliance(self, packet: NetworkPacket) -> Tuple[bool, str]:
+        """Check if network activity violates HIPAA compliance."""
+        violations = []
+        
+        # Check for unencrypted PHI transmission
+        if packet.destination_port in [80, 23, 21]:  # HTTP, Telnet, FTP (unencrypted)
+            if self.is_ehr_system(packet.source_ip) or self.is_ehr_system(packet.destination_ip):
+                violations.append("Unencrypted PHI transmission detected")
+        
+        # Check for after-hours EHR access
+        if packet.timestamp.hour < 6 or packet.timestamp.hour > 22:
+            if self.is_ehr_system(packet.destination_ip):
+                violations.append("After-hours EHR access")
+        
+        # Check for medical device unauthorized access
+        if self.is_medical_device(packet.destination_ip):
+            if packet.destination_port in [22, 23, 3389]:  # SSH, Telnet, RDP
+                violations.append("Unauthorized medical device remote access")
+        
+        has_violation = len(violations) > 0
+        violation_desc = "; ".join(violations) if violations else ""
+        
+        return has_violation, violation_desc
 
 
 class AIThreatDetector:
@@ -269,20 +309,51 @@ class NetworkMonitor:
         self.suspicious_activities = []
         self.monitoring_active = False
         
-    def simulate_network_traffic(self) -> NetworkPacket:
-        """Simulate network traffic for demonstration."""
-        protocols = ["TCP", "UDP", "HTTP", "HTTPS", "DNS"]
+    def generate_healthcare_packet(self) -> NetworkPacket:
+        """Generate realistic healthcare network packets."""
+        protocols = ["HTTPS", "HL7", "DICOM", "TCP", "UDP", "HTTP"]
         
-        # Generate realistic IP addresses
-        source_ip = f"192.168.1.{random.randint(1, 254)}"
-        dest_ip = f"10.0.0.{random.randint(1, 100)}"
+        # Define healthcare network scenarios
+        scenario = random.choice([
+            "normal_ehr", "telehealth_session", "medical_device", 
+            "suspicious_activity", "hipaa_violation", "ransomware_attempt"
+        ])
         
-        # Occasionally generate suspicious traffic
-        if random.random() < 0.1:  # 10% chance of suspicious activity
-            source_ip = random.choice(["192.168.1.100", "203.45.67.89"])  # Known malicious IPs
-            dest_port = random.choice([22, 23, 3389, 1433, 3306])  # Common attack ports
-        else:
-            dest_port = random.choice([80, 443, 53, 22, 25, 110, 143])
+        if scenario == "normal_ehr":
+            # Normal EHR system traffic
+            source_ip = f"192.168.10.{random.randint(1, 50)}"  # Staff workstations
+            dest_ip = random.choice(list({"10.0.20.10", "10.0.20.11"}))  # EHR servers
+            dest_port = 443  # HTTPS
+            
+        elif scenario == "telehealth_session":
+            # Telehealth video session
+            source_ip = f"192.168.20.{random.randint(1, 30)}"  # Patient devices
+            dest_ip = "10.0.30.10"  # Telehealth server
+            dest_port = random.choice([443, 8080, 5060])  # HTTPS, WebRTC, SIP
+            
+        elif scenario == "medical_device":
+            # Medical device communication
+            source_ip = f"10.100.1.{random.randint(50, 99)}"  # Medical devices
+            dest_ip = "10.0.40.10"  # Device management server
+            dest_port = random.choice([2575, 104, 502])  # HL7, IEC 61850, Modbus
+            
+        elif scenario == "suspicious_activity":
+            # Suspicious healthcare network activity
+            source_ip = random.choice(["192.168.100.45", "203.0.113.45"])  # Malicious IPs
+            dest_ip = random.choice(["10.0.20.10", "10.100.1.75"])  # EHR or medical device
+            dest_port = random.choice([22, 23, 135, 3389])  # Attack ports
+            
+        elif scenario == "hipaa_violation":
+            # Potential HIPAA violation
+            source_ip = f"192.168.10.{random.randint(1, 50)}"
+            dest_ip = "10.0.20.10"  # EHR server
+            dest_port = 80  # Unencrypted HTTP
+            
+        else:  # ransomware_attempt
+            # Ransomware-like behavior
+            source_ip = f"192.168.10.{random.randint(20, 30)}"  # Compromised workstation
+            dest_ip = f"10.0.{random.randint(20, 50)}.{random.randint(1, 20)}"
+            dest_port = 445  # SMB for lateral movement
         
         packet = NetworkPacket(
             timestamp=datetime.now(),
@@ -342,7 +413,7 @@ class NetworkMonitor:
         
         while self.monitoring_active:
             # Simulate packet capture
-            packet = self.simulate_network_traffic()
+            packet = self.generate_healthcare_packet()
             self.packet_buffer.append(packet)
             
             # Small delay to simulate realistic traffic
@@ -500,20 +571,23 @@ class SecurityDatabase:
             }
 
 
-class CyberGuardAI:
-    """Main CyberGuard AI Agent orchestrator."""
+class HealthGuardAI:
+    """Main HealthGuard AI Agent orchestrator for healthcare cybersecurity."""
     
     def __init__(self):
         self.network_monitor = NetworkMonitor()
         self.ai_detector = AIThreatDetector()
-        self.threat_intel = ThreatIntelligence()
+        self.threat_intel = HealthcareThreatIntelligence()
         self.incident_response = IncidentResponse()
         self.database = SecurityDatabase()
         
         self.active_threats = []
+        self.hipaa_incidents = []
         self.system_health = {"status": "Healthy", "uptime": time.time()}
         self.monitoring_tasks = []
         self.is_running = False
+        
+        logger.info("🏥 HealthGuard AI Agent initialized for healthcare security")
     
     def calculate_risk_score(self, packet: NetworkPacket, is_anomaly: bool, confidence: float) -> Tuple[str, float]:
         """Calculate threat risk score and severity."""
@@ -549,14 +623,35 @@ class CyberGuardAI:
         
         return severity, base_score
     
-    def create_threat_event(self, packet: NetworkPacket, threat_type: str, severity: str, 
-                          confidence: float, description: str) -> ThreatEvent:
-        """Create a new threat event."""
+    def create_healthcare_threat_event(self, packet: NetworkPacket, threat_type: str, severity: str, 
+                                      confidence: float, description: str) -> HealthcareThreatEvent:
+        """Create a new healthcare-specific threat event."""
         threat_id = hashlib.md5(
             f"{packet.source_ip}{packet.destination_ip}{packet.timestamp}".encode()
         ).hexdigest()[:8]
         
-        threat = ThreatEvent(
+        # Determine affected systems
+        affected_systems = []
+        if self.threat_intel.is_ehr_system(packet.destination_ip):
+            affected_systems.append("EHR")
+        if self.threat_intel.is_telehealth_platform(packet.destination_ip):
+            affected_systems.append("Telehealth")
+        if self.threat_intel.is_medical_device(packet.destination_ip):
+            affected_systems.append("Medical_Device")
+        
+        # Check HIPAA relevance
+        hipaa_violation, violation_desc = self.threat_intel.check_hipaa_compliance(packet)
+        if violation_desc:
+            description = f"{description} | HIPAA: {violation_desc}"
+        
+        # Determine if PHI is at risk
+        phi_at_risk = (
+            self.threat_intel.is_ehr_system(packet.destination_ip) or 
+            hipaa_violation or 
+            threat_type in ["Data Exfiltration", "Database Attack", "Ransomware"]
+        )
+        
+        threat = HealthcareThreatEvent(
             id=threat_id,
             timestamp=packet.timestamp,
             threat_type=threat_type,
@@ -567,13 +662,16 @@ class CyberGuardAI:
             description=description,
             confidence_score=confidence,
             status="Active",
-            mitigation_actions=[]
+            mitigation_actions=[],
+            hipaa_relevant=hipaa_violation,
+            affected_systems=affected_systems,
+            phi_at_risk=phi_at_risk
         )
         
         return threat
     
     async def analyze_packet(self, packet: NetworkPacket):
-        """Analyze individual packet for threats."""
+        """Analyze individual packet for healthcare-specific threats."""
         threats_detected = []
         
         # AI-based anomaly detection
@@ -581,40 +679,84 @@ class CyberGuardAI:
         
         if is_anomaly:
             severity, risk_score = self.calculate_risk_score(packet, True, ai_confidence)
-            threat = self.create_threat_event(
-                packet, "Anomalous Behavior", severity, ai_confidence,
-                f"AI detected anomalous network behavior from {packet.source_ip}"
+            threat = self.create_healthcare_threat_event(
+                packet, "Anomalous Healthcare Behavior", severity, ai_confidence,
+                f"AI detected anomalous behavior in healthcare network from {packet.source_ip}"
             )
             threats_detected.append(threat)
         
-        # Threat intelligence check
-        if self.threat_intel.is_malicious_ip(packet.source_ip):
-            threat = self.create_threat_event(
-                packet, "Known Malicious IP", "High", 0.9,
-                f"Traffic from known malicious IP: {packet.source_ip}"
+        # Healthcare-specific threat intelligence check
+        if self.threat_intel.is_healthcare_malicious_ip(packet.source_ip):
+            threat = self.create_healthcare_threat_event(
+                packet, "Healthcare Targeted Attack", "Critical", 0.95,
+                f"Traffic from healthcare-targeting malicious IP: {packet.source_ip}"
             )
             threats_detected.append(threat)
         
-        # Port scan detection
-        if packet.destination_port in [22, 23, 135, 139, 445]:
-            threat = self.create_threat_event(
-                packet, "Port Scan", "Medium", 0.6,
-                f"Potential port scan targeting port {packet.destination_port}"
+        # Medical device security check
+        if self.threat_intel.is_medical_device(packet.destination_ip):
+            if packet.destination_port in [22, 23, 3389]:  # Remote access to medical device
+                threat = self.create_healthcare_threat_event(
+                    packet, "Medical Device Unauthorized Access", "Critical", 0.9,
+                    f"Unauthorized remote access attempt to medical device {packet.destination_ip}"
+                )
+                threats_detected.append(threat)
+        
+        # EHR system attack detection
+        if self.threat_intel.is_ehr_system(packet.destination_ip):
+            if packet.destination_port in [1433, 3306, 5432]:  # Database ports
+                threat = self.create_healthcare_threat_event(
+                    packet, "EHR Database Attack", "High", 0.8,
+                    f"Direct database access attempt to EHR system from {packet.source_ip}"
+                )
+                threats_detected.append(threat)
+        
+        # HIPAA compliance violation check
+        hipaa_violation, violation_desc = self.threat_intel.check_hipaa_compliance(packet)
+        if hipaa_violation:
+            threat = self.create_healthcare_threat_event(
+                packet, "HIPAA Compliance Violation", "High", 0.85,
+                f"HIPAA violation detected: {violation_desc}"
+            )
+            threats_detected.append(threat)
+            self.hipaa_incidents.append(threat)
+        
+        # Ransomware detection (healthcare-targeted)
+        if packet.destination_port == 445 and packet.source_ip.startswith("192.168.10."):
+            threat = self.create_healthcare_threat_event(
+                packet, "Healthcare Ransomware Activity", "Critical", 0.9,
+                f"Potential ransomware lateral movement detected from {packet.source_ip}"
             )
             threats_detected.append(threat)
         
         # Process detected threats
         for threat in threats_detected:
-            await self.handle_threat(threat)
+            await self.handle_healthcare_threat(threat)
     
-    async def handle_threat(self, threat: ThreatEvent):
-        """Handle detected threat with automated response."""
-        logger.warning(f"THREAT DETECTED: {threat.threat_type} - {threat.description}")
+    async def handle_healthcare_threat(self, threat: HealthcareThreatEvent):
+        """Handle detected healthcare threat with specialized response."""
+        logger.warning(f"🚨 HEALTHCARE THREAT: {threat.threat_type} - {threat.description}")
+        
+        # Enhanced response for HIPAA-relevant threats
+        if threat.hipaa_relevant:
+            logger.critical(f"🔒 HIPAA BREACH ALERT: {threat.description}")
+        
+        # Enhanced response for PHI at risk
+        if threat.phi_at_risk:
+            logger.critical(f"📋 PHI AT RISK: {threat.description}")
         
         # Execute automated response
         actions = self.incident_response.execute_response(threat)
         threat.mitigation_actions = actions
         threat.status = "Mitigated" if actions else "Active"
+        
+        # Store in database
+        self.database.store_threat_event(threat)
+        
+        # Add to active threats if not mitigated
+        if threat.status == "Active":
+            self.active_threats.append(threat) 
+            #Mitigated" if actions else "Active"
         
         # Store in database
         self.database.store_threat_event(threat)
