@@ -1,0 +1,21 @@
+# CyberGuard AI Agent Dependencies
+# Core ML and Data Science
+numpy>=1.21.0
+pandas>=1.3.0
+scikit-learn>=1.0.0
+
+# System Monitoring
+psutil>=5.8.0
+
+# Network and API
+requests>=2.25.0
+
+# Development and Testing (Optional)
+pytest>=6.0.0
+black>=21.0.0
+flake8>=3.9.0
+mypy>=0.910
+
+# Documentation
+sphinx>=4.0.0
+sphinx-rtd-theme>=0.5.0

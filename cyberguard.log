@@ -1,0 +1,219 @@
+2025-09-28 02:04:30,416 - __main__ - INFO - AI Detector initialized with ML capabilities
+2025-09-28 02:04:30,417 - __main__ - INFO - Loaded 5 malicious IPs and 4 domains
+2025-09-28 02:04:30,451 - __main__ - INFO - CyberGuard AI Agent starting...
+2025-09-28 02:04:30,451 - __main__ - INFO - Starting continuous security monitoring...
+2025-09-28 02:04:30,559 - __main__ - INFO - AI model trained with 100 packets
+2025-09-28 02:04:30,561 - __main__ - INFO - Network monitoring started
+2025-09-28 02:04:31,588 - __main__ - WARNING - THREAT DETECTED: Port Scan - Potential port scan targeting port 22
+2025-09-28 02:04:31,589 - __main__ - INFO - RATE LIMITED: 192.168.1.97
+2025-09-28 02:04:31,589 - __main__ - INFO - LOGGED INCIDENT: a522b39a - Potential port scan targeting port 22
+2025-09-28 02:04:31,604 - __main__ - WARNING - THREAT DETECTED: Known Malicious IP - Traffic from known malicious IP: 192.168.1.100
+2025-09-28 02:04:31,605 - __main__ - INFO - BLOCKED IP: 192.168.1.100
+2025-09-28 02:04:31,605 - __main__ - WARNING - ADMIN ALERT: Known Malicious IP from 192.168.1.100
+2025-09-28 02:04:31,605 - __main__ - INFO - LOGGED INCIDENT: f83a017e - Traffic from known malicious IP: 192.168.1.100
+2025-09-28 02:04:31,619 - __main__ - WARNING - THREAT DETECTED: Known Malicious IP - Traffic from known malicious IP: 192.168.1.100
+2025-09-28 02:04:31,619 - __main__ - INFO - BLOCKED IP: 192.168.1.100
+2025-09-28 02:04:31,619 - __main__ - WARNING - ADMIN ALERT: Known Malicious IP from 192.168.1.100
+2025-09-28 02:04:31,620 - __main__ - INFO - LOGGED INCIDENT: 8d1598e9 - Traffic from known malicious IP: 192.168.1.100
+2025-09-28 02:04:32,634 - __main__ - WARNING - THREAT DETECTED: Port Scan - Potential port scan targeting port 22
+2025-09-28 02:04:32,635 - __main__ - INFO - RATE LIMITED: 192.168.1.200
+2025-09-28 02:04:32,635 - __main__ - INFO - LOGGED INCIDENT: 595a420f - Potential port scan targeting port 22
+2025-09-28 02:04:33,670 - __main__ - WARNING - THREAT DETECTED: Known Malicious IP - Traffic from known malicious IP: 203.45.67.89
+2025-09-28 02:04:33,670 - __main__ - INFO - BLOCKED IP: 203.45.67.89
+2025-09-28 02:04:33,671 - __main__ - WARNING - ADMIN ALERT: Known Malicious IP from 203.45.67.89
+2025-09-28 02:04:33,671 - __main__ - INFO - LOGGED INCIDENT: cb195db7 - Traffic from known malicious IP: 203.45.67.89
+2025-09-28 02:04:33,686 - __main__ - WARNING - THREAT DETECTED: Port Scan - Potential port scan targeting port 22
+2025-09-28 02:04:33,686 - __main__ - INFO - RATE LIMITED: 192.168.1.8
+2025-09-28 02:04:33,686 - __main__ - INFO - LOGGED INCIDENT: 02c3385b - Potential port scan targeting port 22
+2025-09-28 02:04:33,703 - __main__ - WARNING - THREAT DETECTED: Known Malicious IP - Traffic from known malicious IP: 192.168.1.100
+2025-09-28 02:04:33,703 - __main__ - INFO - BLOCKED IP: 192.168.1.100
+2025-09-28 02:04:33,704 - __main__ - WARNING - ADMIN ALERT: Known Malicious IP from 192.168.1.100
+2025-09-28 02:04:33,704 - __main__ - INFO - LOGGED INCIDENT: 559e8ee9 - Traffic from known malicious IP: 192.168.1.100
+2025-09-28 02:04:33,715 - __main__ - WARNING - THREAT DETECTED: Known Malicious IP - Traffic from known malicious IP: 203.45.67.89
+2025-09-28 02:04:33,715 - __main__ - INFO - BLOCKED IP: 203.45.67.89
+2025-09-28 02:04:33,715 - __main__ - WARNING - ADMIN ALERT: Known Malicious IP from 203.45.67.89
+2025-09-28 02:04:33,715 - __main__ - INFO - LOGGED INCIDENT: 02cca77e - Traffic from known malicious IP: 203.45.67.89
+2025-09-28 02:04:33,728 - __main__ - WARNING - THREAT DETECTED: Port Scan - Potential port scan targeting port 22
+2025-09-28 02:04:33,728 - __main__ - INFO - RATE LIMITED: 203.45.67.89
+2025-09-28 02:04:33,728 - __main__ - INFO - LOGGED INCIDENT: 02cca77e - Potential port scan targeting port 22
+2025-09-28 02:04:33,741 - __main__ - WARNING - THREAT DETECTED: Port Scan - Potential port scan targeting port 22
+2025-09-28 02:04:33,741 - __main__ - INFO - RATE LIMITED: 192.168.1.131
+2025-09-28 02:04:33,741 - __main__ - INFO - LOGGED INCIDENT: 5616f6fe - Potential port scan targeting port 22
+2025-09-28 02:04:34,777 - __main__ - WARNING - THREAT DETECTED: Port Scan - Potential port scan targeting port 22
+2025-09-28 02:04:34,778 - __main__ - INFO - RATE LIMITED: 192.168.1.251
+2025-09-28 02:04:34,778 - __main__ - INFO - LOGGED INCIDENT: 7fd5c47f - Potential port scan targeting port 22
+2025-09-28 02:04:36,864 - __main__ - WARNING - THREAT DETECTED: Known Malicious IP - Traffic from known malicious IP: 192.168.1.100
+2025-09-28 02:04:36,865 - __main__ - INFO - BLOCKED IP: 192.168.1.100
+2025-09-28 02:04:36,865 - __main__ - WARNING - ADMIN ALERT: Known Malicious IP from 192.168.1.100
+2025-09-28 02:04:36,866 - __main__ - INFO - LOGGED INCIDENT: c65bb6e5 - Traffic from known malicious IP: 192.168.1.100
+2025-09-28 02:04:36,880 - __main__ - WARNING - THREAT DETECTED: Port Scan - Potential port scan targeting port 22
+2025-09-28 02:04:36,881 - __main__ - INFO - RATE LIMITED: 192.168.1.100
+2025-09-28 02:04:36,881 - __main__ - INFO - LOGGED INCIDENT: c65bb6e5 - Potential port scan targeting port 22
+2025-09-28 02:04:36,898 - __main__ - WARNING - THREAT DETECTED: Known Malicious IP - Traffic from known malicious IP: 203.45.67.89
+2025-09-28 02:04:36,898 - __main__ - INFO - BLOCKED IP: 203.45.67.89
+2025-09-28 02:04:36,899 - __main__ - WARNING - ADMIN ALERT: Known Malicious IP from 203.45.67.89
+2025-09-28 02:04:36,899 - __main__ - INFO - LOGGED INCIDENT: 025e3dc4 - Traffic from known malicious IP: 203.45.67.89
+2025-09-28 02:04:37,940 - __main__ - WARNING - THREAT DETECTED: Port Scan - Potential port scan targeting port 22
+2025-09-28 02:04:37,941 - __main__ - INFO - RATE LIMITED: 192.168.1.206
+2025-09-28 02:04:37,941 - __main__ - INFO - LOGGED INCIDENT: 6a8d3826 - Potential port scan targeting port 22
+2025-09-28 02:04:37,957 - __main__ - WARNING - THREAT DETECTED: Known Malicious IP - Traffic from known malicious IP: 192.168.1.100
+2025-09-28 02:04:37,958 - __main__ - INFO - BLOCKED IP: 192.168.1.100
+2025-09-28 02:04:37,958 - __main__ - WARNING - ADMIN ALERT: Known Malicious IP from 192.168.1.100
+2025-09-28 02:04:37,958 - __main__ - INFO - LOGGED INCIDENT: 12d630a4 - Traffic from known malicious IP: 192.168.1.100
+2025-09-28 02:04:37,970 - __main__ - WARNING - THREAT DETECTED: Port Scan - Potential port scan targeting port 22
+2025-09-28 02:04:37,971 - __main__ - INFO - RATE LIMITED: 192.168.1.41
+2025-09-28 02:04:37,971 - __main__ - INFO - LOGGED INCIDENT: f53d5e42 - Potential port scan targeting port 22
+2025-09-28 02:04:37,985 - __main__ - WARNING - THREAT DETECTED: Known Malicious IP - Traffic from known malicious IP: 192.168.1.100
+2025-09-28 02:04:37,985 - __main__ - INFO - BLOCKED IP: 192.168.1.100
+2025-09-28 02:04:37,985 - __main__ - WARNING - ADMIN ALERT: Known Malicious IP from 192.168.1.100
+2025-09-28 02:04:37,986 - __main__ - INFO - LOGGED INCIDENT: cf4fed62 - Traffic from known malicious IP: 192.168.1.100
+2025-09-28 02:04:39,023 - __main__ - WARNING - THREAT DETECTED: Known Malicious IP - Traffic from known malicious IP: 203.45.67.89
+2025-09-28 02:04:39,024 - __main__ - INFO - BLOCKED IP: 203.45.67.89
+2025-09-28 02:04:39,025 - __main__ - WARNING - ADMIN ALERT: Known Malicious IP from 203.45.67.89
+2025-09-28 02:04:39,025 - __main__ - INFO - LOGGED INCIDENT: baf84a56 - Traffic from known malicious IP: 203.45.67.89
+2025-09-28 02:04:40,067 - __main__ - WARNING - THREAT DETECTED: Port Scan - Potential port scan targeting port 22
+2025-09-28 02:04:40,068 - __main__ - INFO - RATE LIMITED: 192.168.1.203
+2025-09-28 02:04:40,068 - __main__ - INFO - LOGGED INCIDENT: 5796abe8 - Potential port scan targeting port 22
+2025-09-28 02:04:40,107 - __main__ - WARNING - THREAT DETECTED: Port Scan - Potential port scan targeting port 22
+2025-09-28 02:04:40,108 - __main__ - INFO - RATE LIMITED: 192.168.1.151
+2025-09-28 02:04:40,108 - __main__ - INFO - LOGGED INCIDENT: 02dba36f - Potential port scan targeting port 22
+2025-09-28 02:04:41,141 - __main__ - WARNING - THREAT DETECTED: Known Malicious IP - Traffic from known malicious IP: 203.45.67.89
+2025-09-28 02:04:41,142 - __main__ - INFO - BLOCKED IP: 203.45.67.89
+2025-09-28 02:04:41,143 - __main__ - WARNING - ADMIN ALERT: Known Malicious IP from 203.45.67.89
+2025-09-28 02:04:41,143 - __main__ - INFO - LOGGED INCIDENT: 60c9cc1f - Traffic from known malicious IP: 203.45.67.89
+2025-09-28 02:04:41,175 - __main__ - WARNING - THREAT DETECTED: Known Malicious IP - Traffic from known malicious IP: 203.45.67.89
+2025-09-28 02:04:41,176 - __main__ - INFO - BLOCKED IP: 203.45.67.89
+2025-09-28 02:04:41,176 - __main__ - WARNING - ADMIN ALERT: Known Malicious IP from 203.45.67.89
+2025-09-28 02:04:41,176 - __main__ - INFO - LOGGED INCIDENT: a697ce2b - Traffic from known malicious IP: 203.45.67.89
+2025-09-28 02:04:41,189 - __main__ - WARNING - THREAT DETECTED: Port Scan - Potential port scan targeting port 22
+2025-09-28 02:04:41,189 - __main__ - INFO - RATE LIMITED: 203.45.67.89
+2025-09-28 02:04:41,189 - __main__ - INFO - LOGGED INCIDENT: a697ce2b - Potential port scan targeting port 22
+2025-09-28 02:04:41,203 - __main__ - WARNING - THREAT DETECTED: Known Malicious IP - Traffic from known malicious IP: 203.45.67.89
+2025-09-28 02:04:41,203 - __main__ - INFO - BLOCKED IP: 203.45.67.89
+2025-09-28 02:04:41,203 - __main__ - WARNING - ADMIN ALERT: Known Malicious IP from 203.45.67.89
+2025-09-28 02:04:41,204 - __main__ - INFO - LOGGED INCIDENT: 593f7288 - Traffic from known malicious IP: 203.45.67.89
+2025-09-28 02:04:41,215 - __main__ - WARNING - THREAT DETECTED: Port Scan - Potential port scan targeting port 22
+2025-09-28 02:04:41,216 - __main__ - INFO - RATE LIMITED: 203.45.67.89
+2025-09-28 02:04:41,216 - __main__ - INFO - LOGGED INCIDENT: 593f7288 - Potential port scan targeting port 22
+2025-09-28 02:04:42,257 - __main__ - WARNING - THREAT DETECTED: Known Malicious IP - Traffic from known malicious IP: 192.168.1.100
+2025-09-28 02:04:42,257 - __main__ - INFO - BLOCKED IP: 192.168.1.100
+2025-09-28 02:04:42,258 - __main__ - WARNING - ADMIN ALERT: Known Malicious IP from 192.168.1.100
+2025-09-28 02:04:42,258 - __main__ - INFO - LOGGED INCIDENT: 19c941db - Traffic from known malicious IP: 192.168.1.100
+2025-09-28 02:04:42,273 - __main__ - WARNING - THREAT DETECTED: Known Malicious IP - Traffic from known malicious IP: 203.45.67.89
+2025-09-28 02:04:42,273 - __main__ - INFO - BLOCKED IP: 203.45.67.89
+2025-09-28 02:04:42,273 - __main__ - WARNING - ADMIN ALERT: Known Malicious IP from 203.45.67.89
+2025-09-28 02:04:42,273 - __main__ - INFO - LOGGED INCIDENT: ff755777 - Traffic from known malicious IP: 203.45.67.89
+2025-09-28 02:04:42,287 - __main__ - WARNING - THREAT DETECTED: Port Scan - Potential port scan targeting port 22
+2025-09-28 02:04:42,287 - __main__ - INFO - RATE LIMITED: 192.168.1.165
+2025-09-28 02:04:42,288 - __main__ - INFO - LOGGED INCIDENT: cf0cd290 - Potential port scan targeting port 22
+2025-09-28 02:04:42,304 - __main__ - WARNING - THREAT DETECTED: Port Scan - Potential port scan targeting port 22
+2025-09-28 02:04:42,305 - __main__ - INFO - RATE LIMITED: 192.168.1.238
+2025-09-28 02:04:42,305 - __main__ - INFO - LOGGED INCIDENT: b569b4af - Potential port scan targeting port 22
+2025-09-28 02:04:43,352 - __main__ - WARNING - THREAT DETECTED: Known Malicious IP - Traffic from known malicious IP: 192.168.1.100
+2025-09-28 02:04:43,352 - __main__ - INFO - BLOCKED IP: 192.168.1.100
+2025-09-28 02:04:43,352 - __main__ - WARNING - ADMIN ALERT: Known Malicious IP from 192.168.1.100
+2025-09-28 02:04:43,353 - __main__ - INFO - LOGGED INCIDENT: 0760c858 - Traffic from known malicious IP: 192.168.1.100
+2025-09-28 02:04:43,381 - __main__ - WARNING - THREAT DETECTED: Port Scan - Potential port scan targeting port 22
+2025-09-28 02:04:43,381 - __main__ - INFO - RATE LIMITED: 192.168.1.100
+2025-09-28 02:04:43,381 - __main__ - INFO - LOGGED INCIDENT: 0760c858 - Potential port scan targeting port 22
+2025-09-28 02:04:43,404 - __main__ - WARNING - THREAT DETECTED: Known Malicious IP - Traffic from known malicious IP: 203.45.67.89
+2025-09-28 02:04:43,406 - __main__ - INFO - BLOCKED IP: 203.45.67.89
+2025-09-28 02:04:43,406 - __main__ - WARNING - ADMIN ALERT: Known Malicious IP from 203.45.67.89
+2025-09-28 02:04:43,406 - __main__ - INFO - LOGGED INCIDENT: aa008acf - Traffic from known malicious IP: 203.45.67.89
+2025-09-28 02:04:43,417 - __main__ - WARNING - THREAT DETECTED: Port Scan - Potential port scan targeting port 22
+2025-09-28 02:04:43,418 - __main__ - INFO - RATE LIMITED: 203.45.67.89
+2025-09-28 02:04:43,418 - __main__ - INFO - LOGGED INCIDENT: aa008acf - Potential port scan targeting port 22
+2025-09-28 02:04:43,430 - __main__ - WARNING - THREAT DETECTED: Port Scan - Potential port scan targeting port 22
+2025-09-28 02:04:43,431 - __main__ - INFO - RATE LIMITED: 192.168.1.14
+2025-09-28 02:04:43,431 - __main__ - INFO - LOGGED INCIDENT: 954ffec5 - Potential port scan targeting port 22
+2025-09-28 02:04:44,461 - __main__ - WARNING - THREAT DETECTED: Port Scan - Potential port scan targeting port 22
+2025-09-28 02:04:44,461 - __main__ - INFO - RATE LIMITED: 192.168.1.135
+2025-09-28 02:04:44,461 - __main__ - INFO - LOGGED INCIDENT: f9e4e5d4 - Potential port scan targeting port 22
+2025-09-28 02:04:44,492 - __main__ - WARNING - THREAT DETECTED: Port Scan - Potential port scan targeting port 22
+2025-09-28 02:04:44,492 - __main__ - INFO - RATE LIMITED: 192.168.1.141
+2025-09-28 02:04:44,493 - __main__ - INFO - LOGGED INCIDENT: 82cd3810 - Potential port scan targeting port 22
+2025-09-28 02:04:44,509 - __main__ - WARNING - THREAT DETECTED: Port Scan - Potential port scan targeting port 22
+2025-09-28 02:04:44,509 - __main__ - INFO - RATE LIMITED: 192.168.1.83
+2025-09-28 02:04:44,509 - __main__ - INFO - LOGGED INCIDENT: e800ef07 - Potential port scan targeting port 22
+2025-09-28 02:04:44,525 - __main__ - WARNING - THREAT DETECTED: Port Scan - Potential port scan targeting port 22
+2025-09-28 02:04:44,525 - __main__ - INFO - RATE LIMITED: 192.168.1.103
+2025-09-28 02:04:44,525 - __main__ - INFO - LOGGED INCIDENT: 154d3b39 - Potential port scan targeting port 22
+2025-09-28 02:04:45,538 - __main__ - WARNING - THREAT DETECTED: Port Scan - Potential port scan targeting port 22
+2025-09-28 02:04:45,538 - __main__ - INFO - RATE LIMITED: 192.168.1.76
+2025-09-28 02:04:45,538 - __main__ - INFO - LOGGED INCIDENT: 429f84e6 - Potential port scan targeting port 22
+2025-09-28 02:04:45,572 - __main__ - WARNING - THREAT DETECTED: Known Malicious IP - Traffic from known malicious IP: 192.168.1.100
+2025-09-28 02:04:45,573 - __main__ - INFO - BLOCKED IP: 192.168.1.100
+2025-09-28 02:04:45,573 - __main__ - WARNING - ADMIN ALERT: Known Malicious IP from 192.168.1.100
+2025-09-28 02:04:45,573 - __main__ - INFO - LOGGED INCIDENT: 6c6796a4 - Traffic from known malicious IP: 192.168.1.100
+2025-09-28 02:04:45,587 - __main__ - WARNING - THREAT DETECTED: Known Malicious IP - Traffic from known malicious IP: 203.45.67.89
+2025-09-28 02:04:45,587 - __main__ - INFO - BLOCKED IP: 203.45.67.89
+2025-09-28 02:04:45,588 - __main__ - WARNING - ADMIN ALERT: Known Malicious IP from 203.45.67.89
+2025-09-28 02:04:45,588 - __main__ - INFO - LOGGED INCIDENT: 6786c900 - Traffic from known malicious IP: 203.45.67.89
+2025-09-28 02:04:46,599 - __main__ - WARNING - THREAT DETECTED: Known Malicious IP - Traffic from known malicious IP: 203.45.67.89
+2025-09-28 02:04:46,599 - __main__ - INFO - BLOCKED IP: 203.45.67.89
+2025-09-28 02:04:46,599 - __main__ - WARNING - ADMIN ALERT: Known Malicious IP from 203.45.67.89
+2025-09-28 02:04:46,599 - __main__ - INFO - LOGGED INCIDENT: e6f394e6 - Traffic from known malicious IP: 203.45.67.89
+2025-09-28 02:04:46,623 - __main__ - WARNING - THREAT DETECTED: Port Scan - Potential port scan targeting port 23
+2025-09-28 02:04:46,623 - __main__ - INFO - RATE LIMITED: 203.45.67.89
+2025-09-28 02:04:46,624 - __main__ - INFO - LOGGED INCIDENT: e6f394e6 - Potential port scan targeting port 23
+2025-09-28 02:04:46,644 - __main__ - WARNING - THREAT DETECTED: Known Malicious IP - Traffic from known malicious IP: 192.168.1.100
+2025-09-28 02:04:46,645 - __main__ - INFO - BLOCKED IP: 192.168.1.100
+2025-09-28 02:04:46,645 - __main__ - WARNING - ADMIN ALERT: Known Malicious IP from 192.168.1.100
+2025-09-28 02:04:46,645 - __main__ - INFO - LOGGED INCIDENT: 4247f59b - Traffic from known malicious IP: 192.168.1.100
+2025-09-28 02:04:47,682 - __main__ - WARNING - THREAT DETECTED: Known Malicious IP - Traffic from known malicious IP: 203.45.67.89
+2025-09-28 02:04:47,682 - __main__ - INFO - BLOCKED IP: 203.45.67.89
+2025-09-28 02:04:47,684 - __main__ - WARNING - ADMIN ALERT: Known Malicious IP from 203.45.67.89
+2025-09-28 02:04:47,684 - __main__ - INFO - LOGGED INCIDENT: 39092765 - Traffic from known malicious IP: 203.45.67.89
+2025-09-28 02:04:48,723 - __main__ - WARNING - THREAT DETECTED: Known Malicious IP - Traffic from known malicious IP: 203.45.67.89
+2025-09-28 02:04:48,723 - __main__ - INFO - BLOCKED IP: 203.45.67.89
+2025-09-28 02:04:48,724 - __main__ - WARNING - ADMIN ALERT: Known Malicious IP from 203.45.67.89
+2025-09-28 02:04:48,724 - __main__ - INFO - LOGGED INCIDENT: 39092765 - Traffic from known malicious IP: 203.45.67.89
+2025-09-28 02:04:48,762 - __main__ - WARNING - THREAT DETECTED: Port Scan - Potential port scan targeting port 22
+2025-09-28 02:04:48,763 - __main__ - INFO - RATE LIMITED: 192.168.1.127
+2025-09-28 02:04:48,763 - __main__ - INFO - LOGGED INCIDENT: f2a9fe9f - Potential port scan targeting port 22
+2025-09-28 02:04:48,778 - __main__ - WARNING - THREAT DETECTED: Known Malicious IP - Traffic from known malicious IP: 192.168.1.100
+2025-09-28 02:04:48,779 - __main__ - INFO - BLOCKED IP: 192.168.1.100
+2025-09-28 02:04:48,779 - __main__ - WARNING - ADMIN ALERT: Known Malicious IP from 192.168.1.100
+2025-09-28 02:04:48,779 - __main__ - INFO - LOGGED INCIDENT: 09edf1a6 - Traffic from known malicious IP: 192.168.1.100
+2025-09-28 02:04:48,790 - __main__ - WARNING - THREAT DETECTED: Port Scan - Potential port scan targeting port 23
+2025-09-28 02:04:48,790 - __main__ - INFO - RATE LIMITED: 192.168.1.100
+2025-09-28 02:04:48,790 - __main__ - INFO - LOGGED INCIDENT: 09edf1a6 - Potential port scan targeting port 23
+2025-09-28 02:04:49,787 - __main__ - WARNING - THREAT DETECTED: Port Scan - Potential port scan targeting port 22
+2025-09-28 02:04:49,788 - __main__ - INFO - RATE LIMITED: 192.168.1.210
+2025-09-28 02:04:49,788 - __main__ - INFO - LOGGED INCIDENT: 80b7a0ac - Potential port scan targeting port 22
+2025-09-28 02:04:49,823 - __main__ - WARNING - THREAT DETECTED: Known Malicious IP - Traffic from known malicious IP: 203.45.67.89
+2025-09-28 02:04:49,823 - __main__ - INFO - BLOCKED IP: 203.45.67.89
+2025-09-28 02:04:49,824 - __main__ - WARNING - ADMIN ALERT: Known Malicious IP from 203.45.67.89
+2025-09-28 02:04:49,824 - __main__ - INFO - LOGGED INCIDENT: 37d86f4b - Traffic from known malicious IP: 203.45.67.89
+2025-09-28 02:04:49,833 - __main__ - WARNING - THREAT DETECTED: Port Scan - Potential port scan targeting port 23
+2025-09-28 02:04:49,834 - __main__ - INFO - RATE LIMITED: 203.45.67.89
+2025-09-28 02:04:49,835 - __main__ - INFO - LOGGED INCIDENT: 37d86f4b - Potential port scan targeting port 23
+2025-09-28 02:04:49,853 - __main__ - WARNING - THREAT DETECTED: Known Malicious IP - Traffic from known malicious IP: 192.168.1.100
+2025-09-28 02:04:49,854 - __main__ - INFO - BLOCKED IP: 192.168.1.100
+2025-09-28 02:04:49,854 - __main__ - WARNING - ADMIN ALERT: Known Malicious IP from 192.168.1.100
+2025-09-28 02:04:49,854 - __main__ - INFO - LOGGED INCIDENT: 871f99c8 - Traffic from known malicious IP: 192.168.1.100
+2025-09-28 02:04:49,865 - __main__ - WARNING - THREAT DETECTED: Port Scan - Potential port scan targeting port 23
+2025-09-28 02:04:49,865 - __main__ - INFO - RATE LIMITED: 192.168.1.100
+2025-09-28 02:04:49,866 - __main__ - INFO - LOGGED INCIDENT: 871f99c8 - Potential port scan targeting port 23
+2025-09-28 02:04:50,887 - __main__ - WARNING - THREAT DETECTED: Port Scan - Potential port scan targeting port 22
+2025-09-28 02:04:50,887 - __main__ - INFO - RATE LIMITED: 192.168.1.253
+2025-09-28 02:04:50,887 - __main__ - INFO - LOGGED INCIDENT: f733c89b - Potential port scan targeting port 22
+2025-09-28 02:04:51,922 - __main__ - WARNING - THREAT DETECTED: Port Scan - Potential port scan targeting port 22
+2025-09-28 02:04:51,922 - __main__ - INFO - RATE LIMITED: 192.168.1.253
+2025-09-28 02:04:51,923 - __main__ - INFO - LOGGED INCIDENT: f733c89b - Potential port scan targeting port 22
+2025-09-28 02:04:51,948 - __main__ - WARNING - THREAT DETECTED: Known Malicious IP - Traffic from known malicious IP: 203.45.67.89
+2025-09-28 02:04:51,948 - __main__ - INFO - BLOCKED IP: 203.45.67.89
+2025-09-28 02:04:51,949 - __main__ - WARNING - ADMIN ALERT: Known Malicious IP from 203.45.67.89
+2025-09-28 02:04:51,949 - __main__ - INFO - LOGGED INCIDENT: 92309998 - Traffic from known malicious IP: 203.45.67.89
+2025-09-28 02:04:51,963 - __main__ - WARNING - THREAT DETECTED: Port Scan - Potential port scan targeting port 22
+2025-09-28 02:04:51,964 - __main__ - INFO - RATE LIMITED: 192.168.1.191
+2025-09-28 02:04:51,964 - __main__ - INFO - LOGGED INCIDENT: 7bfa99a1 - Potential port scan targeting port 22
+2025-09-28 02:04:53,007 - __main__ - WARNING - THREAT DETECTED: Known Malicious IP - Traffic from known malicious IP: 203.45.67.89
+2025-09-28 02:04:53,007 - __main__ - INFO - BLOCKED IP: 203.45.67.89
+2025-09-28 02:04:53,008 - __main__ - WARNING - ADMIN ALERT: Known Malicious IP from 203.45.67.89
+2025-09-28 02:04:53,008 - __main__ - INFO - LOGGED INCIDENT: 088e67c1 - Traffic from known malicious IP: 203.45.67.89
+2025-09-28 02:04:53,021 - __main__ - WARNING - THREAT DETECTED: Port Scan - Potential port scan targeting port 22
+2025-09-28 02:04:53,021 - __main__ - INFO - RATE LIMITED: 203.45.67.89
+2025-09-28 02:04:53,022 - __main__ - INFO - LOGGED INCIDENT: 088e67c1 - Potential port scan targeting port 22
+2025-09-28 02:04:53,529 - __main__ - INFO - Network monitoring stopped
+2025-09-28 02:04:53,529 - __main__ - INFO - CyberGuard AI Agent stopped
